@@ -59,14 +59,14 @@ module "application-lb" {
 
 module "hosted-zone" {
   source          = "./hosted-zone"
-  domain_name     = "881293335807.realhandsonlabs.net"
+  domain_name     = "549610147685.realhandsonlabs.net"
   aws_lb_dns_name = module.application-lb.aws_lb_dns_name
   aws_lb_zone_id  = module.application-lb.aws_lb_zone_id
 }
 
 module "CM-Route53" {
   source         = "./CM-route53"
-  domain_name    = "881293335807.realhandsonlabs.net"
+  domain_name    = "549610147685.realhandsonlabs.net"
   hosted_zone_id = module.hosted-zone.hosted_zone_id
 }
 
